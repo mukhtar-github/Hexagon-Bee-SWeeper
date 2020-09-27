@@ -9,10 +9,10 @@ function Cell(q, r){
   
 Cell.prototype.toString = function(){
 	return this.q + " " + this.r + " " + this.s; 
-}
+};
 
-function hex_corner(center, size, i){
-    var angle_deg = 60 * i   + 30
+function hex_corner(center, size, i) {
+    var angle_deg = 60 * i   + 30;
     var angle_rad = PI/180 * angle_deg;
     return createVector(center.x + size * cos(angle_rad),
                  center.y + size * sin(angle_rad));
@@ -22,7 +22,7 @@ Cell.prototype.reveal = function(){
 	this.revealed = true;
   if(this.neighborCount <= 0)
     this.floodFill();
-}
+};
 
 
 
@@ -42,7 +42,7 @@ Cell.prototype.countNeighbors = function(){
 	}
   this.neighborCount = count;
   return count;
-}
+};
 
 Cell.prototype.getNeighbors = function(){
   var neighbors = [];
@@ -53,7 +53,7 @@ Cell.prototype.getNeighbors = function(){
 	neighbors.push(cellMap[(this.q - 1) + " " + (this.r + 1) + " " + (this.s - 0)]);
 	neighbors.push(cellMap[(this.q + 0) + " " + (this.r + 1) + " " + (this.s - 1)]);
   return neighbors;
-}
+};
 
 Cell.prototype.floodFill = function(){
   var neighbors = this.getNeighbors();
@@ -64,7 +64,7 @@ Cell.prototype.floodFill = function(){
       continue;
     neighbors[i].reveal(); 
   }
-}
+};
 
 Cell.prototype.show = function(center, size){
   var q = this.q;
@@ -105,4 +105,4 @@ Cell.prototype.show = function(center, size){
 	
 	//textSize(6);
 	//text(q + " " + r + " \n" + (-q-r), center.x + 1, center.y + 2)
-}
+};
