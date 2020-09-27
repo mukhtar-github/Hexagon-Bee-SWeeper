@@ -66,7 +66,7 @@ function draw() {
     textSize(100);
     text("GAME OVER", width/2, height/2);
     textSize(30);
-    text("Press SPACE to RESTART", width/2, height/2 + 80);
+    text("Press SPACE-BAR to RESTART", width/2, height/2 + 80);
     if(keyIsDown(32)){
       setup();
       console.log("RESTART");
@@ -76,8 +76,8 @@ function draw() {
 }
 
 function pixel_to_hex(x, y){
-  var q = (x * sqrt(3)/3 - y / 3) / hex_size
-  var r = y * 2/3 / hex_size
+  var q = (x * sqrt(3)/3 - y / 3) / hex_size;
+  var r = y * 2/3 / hex_size;
 	var sr = round(-q-r);
 	var qr = round(q);
 	var rr = round(r);
