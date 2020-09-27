@@ -5,7 +5,7 @@ var padding = 3;
 var totalBees = 60;
 var grid_type = "HEXAGON" // Change this value for different grid types (HEXAGON, TRIANGLE, PARRALELOGRAM, RECTANGLE)
 
-var cellMap = {}
+var cellMap = {};
 var gameOver = true;
 
 function setup() { 
